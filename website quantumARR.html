@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum ARR: Empire Server</title>
+    <style>
+        /* RESET & WARNA DASAR */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        body {
+            background-color: #0a0a0a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: #121212;
+            padding: 40px 25px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid #ffd700;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 20px;
+            right: 20px;
+            height: 4px;
+            background: linear-gradient(90deg, #8b6508, #ffd700, #ffb347, #ffd700, #8b6508);
+            border-radius: 0 0 4px 4px;
+        }
+
+        .logo-wrapper img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            image-rendering: pixelated;
+            border-radius: 12px;
+            max-height: 180px;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+
+        .main-title span { color: #ffffff; }
+
+        .sub-title {
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
+        /* ===== BAGIAN BARU: IP & PORT ===== */
+        .server-info {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #333;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .info-item {
+            flex: 1;
+            min-width: 130px;
+        }
+
+        .info-item .label {
+            font-size: 0.7rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .info-item .value {
+            font-size: 1.1rem;
+            color: #ffd700;
+            font-weight: 600;
+            background: #000;
+            padding: 5px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            border: 1px solid #444;
+            word-break: break-all;
+        }
+        /* ================================= */
+
+        .status-container {
+            margin-top: 5px;
+        }
+
+        .status-label {
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: #1a1a1a;
+            border: 2px solid;
+            transition: 0.3s;
+        }
+
+        .status-on {
+            border-color: #00ff88;
+            color: #00ff88;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        .status-off {
+            border-color: #ff4444;
+            color: #ff4444;
+            box-shadow: 0 0 20px rgba(255, 68, 68, 0.2);
+            background: rgba(255, 68, 68, 0.05);
+        }
+
+        .info-time {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.7rem;
+            color: #444;
+            border-top: 1px solid #222;
+            padding-top: 15px;
+        }
+
+        @media (max-width: 400px) {
+            .main-title { font-size: 1.6rem; }
+            .status-badge { font-size: 1.2rem; padding: 10px 25px; }
+            .info-item .value { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+<!-- LOGO -->
+<div class="logo-wrapper">
+    <img src="QUANTUMARR1.png" alt="Quantum ARR: Empire Logo">
+</div>
+
+        <!-- JUDUL -->
+        <h1 class="main-title">Quantum ARR: <span>Empire</span></h1>
+
+        <!-- SUBJUDUL -->
+        <p class="sub-title">
+            Server Survival Minecraft Bedrock.<br>
+            Version 26.23 | Bedrock
+        </p>
+<hr style="border: 0; height: 1px; background: linear-gradient(to right, transparent, #ffd700, transparent); margin: 15px 0;">
+        <!-- ===== ALAMAT & PORT ===== -->
+        <div class="server-info">
+            <div class="info-item">
+                <span class="label">🌐 Alamat</span>
+                <span class="value">mc2067309.fmcs.cloud</span>
+            </div>
+            <div class="info-item">
+                <span class="label">🔌 Port</span>
+                <span class="value">49085</span>
+            </div>
+        </div>
+<hr style="border: 0; height: 1px; background: linear-gradient(to right, transparent, #ffd700, transparent); margin: 15px 0;">
+        <!-- STATUS SERVER (OTOMATIS JAM) -->
+        <div class="status-container">
+            <span class="status-label">Status Server</span>
+            <div id="serverStatus" class="status-badge">⏳ Mengecek waktu...</div>
+            
+            <div class="info-time" id="timeInfo"></div>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Quantum ARR Empire
+        </div>
+
+    </div>
+
+    <script>
+        // ==========================================
+        // 🕒 SETTINGS JADWAL SERVER (UBAH DI SINI)
+        // ==========================================
+        const START_HOUR = 18;   // Jam mulai (18 = jam 6 sore)
+        const START_MINUTE = 30; // Menit mulai (30)
+        const DURATION_HOURS = 4; // Berapa lama server ON (4 jam)
+
+        // WIB (UTC+7)
+        // ==========================================
+
+        function checkServerStatus() {
+            const now = new Date();
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+
+            const totalMinutesNow = currentHour * 60 + currentMinute;
+            const totalMinutesStart = START_HOUR * 60 + START_MINUTE;
+            const totalMinutesEnd = totalMinutesStart + (DURATION_HOURS * 60);
+
+            const statusElement = document.getElementById('serverStatus');
+            const timeInfo = document.getElementById('timeInfo');
+
+            let isOn = false;
+            if (totalMinutesNow >= totalMinutesStart && totalMinutesNow < totalMinutesEnd) {
+                isOn = true;
+            }
+
+            if (isOn) {
+                statusElement.textContent = '🟢 ONLINE';
+                statusElement.className = 'status-badge status-on';
+            } else {
+                statusElement.textContent = '🔴 OFFLINE';
+                statusElement.className = 'status-badge status-off';
+            }
+
+            const startTimeStr = `${String(START_HOUR).padStart(2, '0')}:${String(START_MINUTE).padStart(2, '0')}`;
+            const endHour = START_HOUR + DURATION_HOURS;
+            const endMinute = START_MINUTE;
+            const endTimeStr = `${String(endHour).padStart(2, '0')}:${String(endMinute).padStart(2, '0')}`;
+            
+            timeInfo.textContent = `🕒 Server aktif: ${startTimeStr} - ${endTimeStr} WIB`;
+        }
+
+        checkServerStatus();
+        setInterval(checkServerStatus, 60000);
+    </script>
+
+</body>
+</html>
